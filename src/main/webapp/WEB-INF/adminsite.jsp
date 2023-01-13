@@ -40,14 +40,14 @@
                 <th>Katagori:</th>
                 <td>
                     <c:forEach var="item" items="${sessionScope.productsList}">
-                    <br> Katagori: ${item.idcatagory}
+                    <br> ID: ${item.id_products}
                     </c:forEach>
 
 
                 <th>Type:</th>
                 <td>
                     <c:forEach var="item" items="${sessionScope.productsList}">
-                        <br>Type: ${item.name}
+                        <br>Navn: ${item.name}
                     </c:forEach>
                 </td>
 
