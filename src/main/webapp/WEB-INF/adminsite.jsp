@@ -37,14 +37,14 @@
 
         <table class="table table-striped">
             <tr>
-                <th>Katagori:</th>
+                <th>ID:</th>
                 <td>
                     <c:forEach var="item" items="${sessionScope.productsList}">
                     <br> ID: ${item.id_products}
                     </c:forEach>
 
 
-                <th>Type:</th>
+                <th>NAVN:</th>
                 <td>
                     <c:forEach var="item" items="${sessionScope.productsList}">
                         <br>Navn: ${item.name}
