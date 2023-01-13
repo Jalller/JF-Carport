@@ -40,7 +40,7 @@
                 <th>ID:</th>
                 <td>
                     <c:forEach var="item" items="${sessionScope.productsList}">
-                    <br> ID: ${item.id_products}
+                    <br>ID: ${item.id_products}
                     </c:forEach>
 
 
