@@ -57,16 +57,51 @@
     <hr/>
     <div class="row mt-4">
         <div class="col">
-            Nørgaardsvej 30<br/>
-            2800 Lyngby
+            <a href="aboutus.jsp">Kundeservice</a><br>
+            <a href="aboutus.jsp">Kontakt Fog</a><br>
+            <a href="aboutus.jsp">Ofte stillede spørgsmål</a><br>
+            <a href="aboutus.jsp">Købs- og leveringsvilkår online</a><br>
+            <a href="aboutus.jsp">Fortrydelse og returnering</a><br>
+            <a href="aboutus.jsp">Fragt</a><br>
+            <a href="aboutus.jsp">Lån en trailer</a><br>
+            <a href="aboutus.jsp">Fog gavekort</a><br>
         </div>
         <div class="col">
-            <jsp:invoke fragment="footer"/><br/>
-            <p>&copy; 2022 Cphbusiness</p>
+            <a href="aboutus.jsp">Om Fog</a><br>
+            <a href="aboutus.jsp">Åbningstider</a><br>
+            <a href="aboutus.jsp">Byg bæredygtigt</a><br>
+            <a href="aboutus.jsp">Udlejning</a><br>
+            <a href="aboutus.jsp">Fog gavekort</a><br>
+            <a href="aboutus.jsp">Fogs Fond</a><br>
+            <a href="aboutus.jsp">Karriere i Fog</a><br>
+            <a href="aboutus.jsp">Bliv kunde i Fog</a><br>
+            <a href="aboutus.jsp">Karriere i Fog</a><br>
+            <a href="aboutus.jsp">Persondatapolitik</a><br>
+            <a href="aboutus.jsp">Cookies</a><br>
+
         </div>
+
         <div class="col">
-            Datamatikeruddannelsen<br/>
-            2. semester efterår 2022
+            <a href="aboutus.jsp">Aktuelt</a><br>
+            <a href="aboutus.jsp">Aviser og kataloger</a><br>
+            <a href="aboutus.jsp">Tilmeld nyhedsbrev</a><br>
+            <a href="aboutus.jsp">Brands</a><br>
+            <a href="aboutus.jsp">LinkedIn</a><br>
+            <a href="aboutus.jsp">Instagram</a><br>
+            <a href="aboutus.jsp">Facebook</a><br>
+
+        </div>
+
+        <div class="col">
+            <div class="col">
+<%--                <jsp:invoke fragment="footer"/>--%>
+
+            </div>
+            Johannes Fog A/S <br>
+            Firskovvej 20<br>
+            2800 Lyngby<br>
+
+            CVR-nr. 16314439
         </div>
     </div>
 
