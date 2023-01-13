@@ -29,9 +29,12 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="${pageContext.request.contextPath}/">Page 1</a>
-                    <a class="nav-item nav-link" href="${pageContext.request.contextPath}/">Page 2</a>
-                    <a class="nav-item nav-link" href="${pageContext.request.contextPath}/">Page 3</a>
+                    <a class="nav-item nav-link"
+                       href="${pageContext.request.contextPath}/">${sessionScope.user.username}</a>
+                    <a class="nav-item nav-link" href="${pageContext.request.contextPath}/profile.jsp">Profil</a>
+                    <a class="nav-item nav-link" href="${pageContext.request.contextPath}/aboutus.jsp">Om os</a>
+                    <a class="nav-item nav-link" href="${pageContext.request.contextPath}/shoppingcart">Indkøbskurv
+                        (${sessionScope.cartsize})</a>
                     <c:if test="${sessionScope.user == null }">
                         <a class="nav-item nav-link" href="${pageContext.request.contextPath}/login.jsp">Login</a>
                     </c:if>
