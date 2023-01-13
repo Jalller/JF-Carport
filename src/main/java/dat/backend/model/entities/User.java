@@ -6,68 +6,69 @@ public class User
 {
     private String username;
     private String password;
-    private String role;
+    private String accounttype;
 
-    public User(String username, String password, String role)
-    {
-        this.username = username;
-        this.password = password;
-        this.role = role;
+    private double balance;
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", account_type='" + accounttype + '\'' +
+                ", balance=" + balance +
+                '}';
     }
 
-    public String getUsername()
-    {
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return balance == user.balance && Objects.equals(username, user.username) && Objects.equals(password, user.password) && Objects.equals(accounttype, user.accounttype);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(username, password, accounttype, balance);
+    }
+
+    public String getUsername() {
         return username;
     }
 
-    public void setUsername(String username)
-    {
+    public void setUsername(String username) {
         this.username = username;
     }
 
-    public String getPassword()
-    {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password)
-    {
+    public void setPassword(String password) {
         this.password = password;
     }
 
-    public String getRole()
-    {
-        return role;
+    public String getAccounttype() {
+        return accounttype;
     }
 
-    public void setRole(String role)
-    {
-        this.role = role;
+    public void setAccounttype(String accounttype) {
+        this.accounttype = accounttype;
     }
 
-    @Override
-    public boolean equals(Object o)
-    {
-        if (this == o) return true;
-        if (!(o instanceof User)) return false;
-        User user = (User) o;
-        return getUsername().equals(user.getUsername()) && getPassword().equals(user.getPassword()) &&
-                getRole().equals(user.getRole());
+    public double getBalance() {
+        return balance;
     }
 
-    @Override
-    public int hashCode()
-    {
-        return Objects.hash(getUsername(), getPassword(), getRole());
+    public void setBalance(int balance) {
+        this.balance = balance;
     }
 
-    @Override
-    public String toString()
-    {
-        return "User{" +
-                "brugerNavn='" + username + '\'' +
-                ", kodeord='" + password + '\'' +
-                ", rolle='" + role + '\'' +
-                '}';
+    public User(String username, String password, String accounttype, double balance) {
+        this.username = username;
+        this.password = password;
+        this.accounttype = accounttype;
+        this.balance = balance;
     }
 }

@@ -1,5 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `fourthingsplus` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `fourthingsplus`;
+CREATE DATABASE  IF NOT EXISTS `jfdb` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `jfdb`;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -47,11 +47,11 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 
-/* Create test database from fourthingsplus structure */
+/* Create test database from jfdb structure */
 
-CREATE DATABASE  IF NOT EXISTS `fourthingsplus_test` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `fourthingsplus_test`;
-CREATE TABLE fourthingsplus_test.user LIKE fourthingsplus.user;
+CREATE DATABASE  IF NOT EXISTS `jfdb_test` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `jfdb_test`;
+CREATE TABLE jfdb_test.user LIKE jfdb.user;
 
 
 

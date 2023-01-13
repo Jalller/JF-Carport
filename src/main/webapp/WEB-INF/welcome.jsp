@@ -20,13 +20,13 @@
         <ul>
 
 
-            <c:forEach var="item" items="${requestScope.itemList}">
-                <li>${item.name} - (${item.created}) </li>
+            <c:forEach var="item" items="${requestScope.productsList}">
+                <li>${item.name} -  </li>
             </c:forEach>
         </ul>
 
         <c:if test="${sessionScope.user != null}">
-            <p>You are logged in with the role of "${sessionScope.user.role}".</p>
+            <p>You are logged in with the role of "${sessionScope.user.accounttype}".</p>
         </c:if>
 
         <c:if test="${sessionScope.user == null}">

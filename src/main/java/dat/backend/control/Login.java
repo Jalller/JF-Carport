@@ -1,10 +1,11 @@
 package dat.backend.control;
 
 import dat.backend.model.config.ApplicationStart;
-import dat.backend.model.entities.Item;
+import dat.backend.model.entities.Products;
+import dat.backend.model.entities.ShoppingCart;
 import dat.backend.model.entities.User;
 import dat.backend.model.exceptions.DatabaseException;
-import dat.backend.model.persistence.ItemFacade;
+import dat.backend.model.persistence.ProductFacade;
 import dat.backend.model.persistence.UserFacade;
 import dat.backend.model.persistence.ConnectionPool;
 
@@ -45,11 +46,19 @@ public class Login extends HttpServlet
         try
         {
             User user = UserFacade.login(username, password, connectionPool);
+
+            if (user.getAccounttype().equals("admin")){
+                request.getRequestDispatcher("WEB-INF/adminsite.jsp").forward(request, response);
+            }
+
             session = request.getSession();
             session.setAttribute("user", user); // adding user object to session scope
+            ShoppingCart cart = new ShoppingCart();
+            session.setAttribute("cart", cart);
 
-            List<Item> itemList = ItemFacade.getItems(connectionPool);
-            request.setAttribute("itemList",itemList);
+            List<Products> productsList = ProductFacade.getProducts(connectionPool);
+
+            session.setAttribute("productsList", productsList);
 
             request.getRequestDispatcher("WEB-INF/welcome.jsp").forward(request, response);
         }

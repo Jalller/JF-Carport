@@ -12,7 +12,7 @@ public class Authentication
         User user = (User) session.getAttribute("user");
         if (user != null)
         {
-            return user.getRole().equals(role);
+            return user.getAccounttype().equals(role);
         }
         return false;
     }

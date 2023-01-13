@@ -1,31 +1,32 @@
 package dat.backend.model.persistence;
 
-import dat.backend.model.entities.Item;
+import dat.backend.model.entities.Products;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-class ItemMapper {
-    static List<Item> getItems(ConnectionPool connectionPool){
+public class ProductMapper {
+    static List<Products> getProducts(ConnectionPool connectionPool){
 
-        List<Item> itemList = new ArrayList<>();
+        List<Products> productsList = new ArrayList<>();
 
-        String sql = "Select * from item";
+
+
+        String sql = "Select * from products";
 
         try (Connection connection = connectionPool.getConnection()){
 
             try(PreparedStatement ps = connection.prepareStatement(sql)) {
                 ResultSet rs = ps.executeQuery();
                 while (rs.next()) {
-                    int id = rs.getInt("iditem");
+                    int id_products = rs.getInt("id_products");
                     String name = rs.getString("name");
-                    boolean done = rs.getBoolean("done");
-                    Timestamp created = rs.getTimestamp("created");
-                    String username = rs.getString("username");
+                    int price = rs.getInt("price");
+                    String description = rs.getString("description");
 
-                    Item newItem = new Item(id, name, done,created,username);
-                    itemList.add(newItem);
+                    Products newProduct = new Products(id_products,name,price,description);
+                    productsList.add(newProduct);
                 }
 
             } catch (SQLException e) {
@@ -34,6 +35,6 @@ class ItemMapper {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return itemList;
+        return productsList;
     }
 }
