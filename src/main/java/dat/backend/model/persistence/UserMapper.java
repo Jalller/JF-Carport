@@ -41,11 +41,11 @@ class UserMapper
         return user;
     }
 
-    static User createUser(String username, String password, String accounttype, double balance, ConnectionPool connectionPool) throws DatabaseException
+    static User createUser(String username, String password, String accounttype ,double balance, ConnectionPool connectionPool) throws DatabaseException
     {
         Logger.getLogger("web").log(Level.INFO, "");
         User user;
-        String sql = "insert into user (username, password, accounttype,balance) values (?,?,?,?)";
+        String sql = "insert into user (username, password, accounttype, balance) values (?,?,?,?)";
         try (Connection connection = connectionPool.getConnection())
         {
             try (PreparedStatement ps = connection.prepareStatement(sql))
@@ -57,7 +57,7 @@ class UserMapper
                 int rowsAffected = ps.executeUpdate();
                 if (rowsAffected == 1)
                 {
-                    user = new User(username, password, accounttype,balance);
+                    user = new User(username, password,accounttype, balance);
                 } else
                 {
                     throw new DatabaseException("The user with username = " + username + " could not be inserted into the database");
